@@ -14,15 +14,11 @@ const Mainfile = () => {
     input,
     setRecentPrompt,
   } = useContext(Context);
-  
 
-
-  const loadPrompt=async(prompt)=>{
+  const loadPrompt = async (prompt) => {
     setRecentPrompt(prompt);
-    await onSent(prompt)
-
-
-}
+    await onSent(prompt);
+  };
 
   return (
     <>
@@ -41,29 +37,52 @@ const Mainfile = () => {
               <p id="msg">How may I help you ?</p>
             </div>
             <div className="cards">
-              <div onClick={()=>loadPrompt("Suggest beautiful places to seee on an upcoming road trip")}className="card">
+              <div
+                onClick={() =>
+                  loadPrompt(
+                    "Suggest beautiful places to seee on an upcoming road trip"
+                  )
+                }
+                className="card"
+              >
                 <p>
                   Suggest beautiful places to seee on an upcoming road trip{" "}
                 </p>
                 <img src={assets.compass_icon} alt="" />
               </div>
 
-              <div onClick={()=>loadPrompt("Briefly explain the concept: Urban Planning")} className="card">
+              <div
+                onClick={() =>
+                  loadPrompt("Briefly explain the concept: Urban Planning")
+                }
+                className="card"
+              >
                 <p>Briefly explain the concept: Urban Planning </p>
                 <img src={assets.bulb_icon} alt="" />
               </div>
 
-              <div onClick={()=>loadPrompt("Brainstorming team bonding activities for our work retreat")} className="card">
+              <div
+                onClick={() =>
+                  loadPrompt(
+                    "Brainstorming team bonding activities for our work retreat"
+                  )
+                }
+                className="card"
+              >
                 <p>
                   Brainstorming team bonding activities for our work retreat.
                 </p>
                 <img src={assets.message_icon} alt="" />
               </div>
 
-              <div onClick={()=>loadPrompt("Improve the readability of the following code")} className="card">
+              <div
+                onClick={() =>
+                  loadPrompt("Improve the readability of the following code")
+                }
+                className="card"
+              >
                 <p>Improve the readability of the following code</p>
                 <img src={assets.code_icon} alt="" />
-                
               </div>
             </div>
           </>
@@ -98,6 +117,9 @@ const Mainfile = () => {
               onChange={(e) => {
                 setInput(e.target.value);
               }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") onSent();
+              }}
               value={input}
               type="text"
               placeholder="Enter prompt"
@@ -105,12 +127,11 @@ const Mainfile = () => {
             <div className="images">
               <img src={assets.gallery_icon} />
               <img src={assets.mic_icon} />
-              {input?
-              <img onClick={() => onSent() } src={assets.send_icon} />
-              :
-              <img className="img_op_eff" src={assets.send_icon} />}
-
-              
+              {input ? (
+                <img onClick={() => onSent()} src={assets.send_icon} />
+              ) : (
+                <img className="img_op_eff" src={assets.send_icon} />
+              )}
             </div>
           </div>
           <div className="bottom_info">
