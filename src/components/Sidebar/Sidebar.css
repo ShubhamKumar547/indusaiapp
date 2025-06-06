@@ -12,6 +12,7 @@
 }
 
 .sidebar .menu {
+  
   display: block;
   align-items: center;
   margin-left: 15px;
@@ -89,12 +90,16 @@
 }
 
 @media (max-width: 448px) {
-    .sidebar .recent_title {
-        margin-left: 5px;
-    }
-    .sidebar .history,.sidebar .bottom .bottom_item p{
-        display: none;
-    }
+  .result_data {
+    margin-right: 5px;
+  }
+  .sidebar .recent_title {
+    margin-left: 5px;
+  }
+  .sidebar .history,
+  .sidebar .bottom .bottom_item p {
+    display: none;
+  }
   .sidebar {
     max-width: 30%;
     overflow: hidden;
@@ -103,7 +108,7 @@
   .top {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
   }
   .sidebar {
     padding: 4px;
@@ -117,4 +122,15 @@
     margin-left: auto;
     margin-right: auto;
   }
+  .sidebar .menu {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    z-index: 100;
+    
+  }
+  .bottom{
+    margin-top: auto;
+  }
+  
 }

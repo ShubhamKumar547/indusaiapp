@@ -57,8 +57,8 @@
 .main .cards .card {
   border: 1px solid black;
   box-sizing: border-box;
-  min-height:30vh;
-  
+  min-height: 30vh;
+
   /* width: 30vh; */
   padding: 4vh;
   border-radius: 20px;
@@ -79,8 +79,8 @@
   width: 25px;
   padding-top: 4vh;
 }
-.content-area-operner-arae{
-    overflow-y: auto;
+.content-area-operner-arae {
+  overflow-y: auto;
 }
 .main_bottom {
   width: 100%;
@@ -215,6 +215,13 @@
   .card {
     display: none;
   }
+  .result_data {
+    display: flex;
+    gap: 0.9rem;
+    text-align: left;
+    margin-right: 0.2rem;
+    gap:20px;
+  }
 }
 @media (min-width: 1151px) {
   /* .main_container p {
@@ -237,7 +244,6 @@
 @media (max-width: 1150px) {
   .card {
     display: none;
-    
   }
 }
 
@@ -250,5 +256,24 @@
   }
   .card {
     display: none;
+  }
+  .result_data {
+    display: flex;
+    gap: 0.9rem;
+    text-align: left;
+    margin-right: 0.2rem;
+    gap:10px;
+  }
+  .result_title {
+    text-align: left;
+    gap:10px;
+  }
+  .main .nav{
+    padding: 0;
+    margin-left: 50px;
+  }
+  .main .nav img{
+    margin-top:3px;
+    margin-right: 3px;
   }
 }

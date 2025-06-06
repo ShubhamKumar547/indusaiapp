@@ -133,7 +133,7 @@ const Mainfile = () => {
           </div>
           <div className="bottom_info">
             <p>
-              ** Indus AI may display iaccurate info,including about person so
+              ** Indus AI may display inaccurate info,including about person so
               double check it's correctness! Made by Shubham Kumar IIT BHU
             </p>
           </div>
