@@ -89,8 +89,14 @@
 }
 
 @media (max-width: 448px) {
+    .sidebar .recent_title {
+        margin-left: 5px;
+    }
+    .sidebar .history,.sidebar .bottom .bottom_item p{
+        display: none;
+    }
   .sidebar {
-    /* width: 30%; */
+    max-width: 30%;
     overflow: hidden;
     text-overflow: ellipsis;
   }

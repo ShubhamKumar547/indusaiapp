@@ -37,10 +37,10 @@ const Sidebar = () => {
                 <>
                   <div
                     onClick={() => loadPrompt(item)}
-                    className="recent_entry"
+                    className="recent_entry history"
                   >
                     <img src={assets.message_icon} alt="message-icon" />
-                    <p>{item.slice(0, 18)}...</p>
+                    <p>{item.slice(0,10)}...</p>
                   </div>
                 </>
               );
