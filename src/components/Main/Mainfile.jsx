@@ -27,89 +27,90 @@ const Mainfile = () => {
           <p id="Gemini_heading">Indus AI</p>
           <img src={assets.user_icon} alt="" />
         </div>
-
-        {!showResult ? (
-          <>
-            <div className="main_container">
-              <p id="greeting">
-                <span>Hello Developers</span>
-              </p>
-              <p id="msg">How may I help you ?</p>
-            </div>
-            <div className="cards">
-              <div
-                onClick={() =>
-                  loadPrompt(
-                    "Suggest beautiful places to seee on an upcoming road trip"
-                  )
-                }
-                className="card"
-              >
-                <p>
-                  Suggest beautiful places to seee on an upcoming road trip{" "}
+        <div className="content-area-operner-arae">
+          {!showResult ? (
+            <>
+              <div className="main_container">
+                <p id="greeting">
+                  <span>Hello Developers</span>
                 </p>
-                <img src={assets.compass_icon} alt="" />
+                <p id="msg">How may I help you ?</p>
+              </div>
+              <div className="cards">
+                <div
+                  onClick={() =>
+                    loadPrompt(
+                      "Suggest beautiful places to seee on an upcoming road trip"
+                    )
+                  }
+                  className="card"
+                >
+                  <p>
+                    Suggest beautiful places to seee on an upcoming road trip{" "}
+                  </p>
+                  <img src={assets.compass_icon} alt="" />
+                </div>
+
+                <div
+                  onClick={() =>
+                    loadPrompt("Briefly explain the concept: Urban Planning")
+                  }
+                  className="card"
+                >
+                  <p>Briefly explain the concept: Urban Planning </p>
+                  <img src={assets.bulb_icon} alt="" />
+                </div>
+
+                <div
+                  onClick={() =>
+                    loadPrompt(
+                      "Brainstorming team bonding activities for our work retreat"
+                    )
+                  }
+                  className="card"
+                >
+                  <p>
+                    Brainstorming team bonding activities for our work retreat.
+                  </p>
+                  <img src={assets.message_icon} alt="" />
+                </div>
+
+                <div
+                  onClick={() =>
+                    loadPrompt("Improve the readability of the following code")
+                  }
+                  className="card"
+                >
+                  <p>Improve the readability of the following code</p>
+                  <img src={assets.code_icon} alt="" />
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="result">
+              <div className="result_title">
+                <img src={assets.user_icon} />
+                <p>{recentPrompt}.</p>
               </div>
 
-              <div
-                onClick={() =>
-                  loadPrompt("Briefly explain the concept: Urban Planning")
-                }
-                className="card"
-              >
-                <p>Briefly explain the concept: Urban Planning </p>
-                <img src={assets.bulb_icon} alt="" />
-              </div>
+              <div className="result_data">
+                <img src={assets.gemini_icon} />
 
-              <div
-                onClick={() =>
-                  loadPrompt(
-                    "Brainstorming team bonding activities for our work retreat"
-                  )
-                }
-                className="card"
-              >
-                <p>
-                  Brainstorming team bonding activities for our work retreat.
-                </p>
-                <img src={assets.message_icon} alt="" />
-              </div>
-
-              <div
-                onClick={() =>
-                  loadPrompt("Improve the readability of the following code")
-                }
-                className="card"
-              >
-                <p>Improve the readability of the following code</p>
-                <img src={assets.code_icon} alt="" />
+                {loading ? (
+                  <>
+                    <div className="loader">
+                      <hr />
+                      <hr />
+                      <hr />
+                    </div>
+                  </>
+                ) : (
+                  <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                )}
               </div>
             </div>
-          </>
-        ) : (
-          <div className="result">
-            <div className="result_title">
-              <img src={assets.user_icon} />
-              <p>{recentPrompt}.</p>
-            </div>
-
-            <div className="result_data">
-              <img src={assets.gemini_icon} />
-
-              {loading ? (
-                <>
-                  <div className="loader">
-                    <hr />
-                    <hr />
-                    <hr />
-                  </div>
-                </>
-              ) : (
-                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
-              )}
-            </div>
-          </div>
-        )}
+          )}
+        </div>
 
         <div className="main_bottom">
           <div className="search_box">
@@ -125,8 +126,8 @@ const Mainfile = () => {
               placeholder="Enter prompt"
             />
             <div className="images">
-              <img src={assets.gallery_icon} />
-              <img src={assets.mic_icon} />
+              <img className="type1" src={assets.gallery_icon} />
+              <img className="type1" src={assets.mic_icon} />
               {input ? (
                 <img onClick={() => onSent()} src={assets.send_icon} />
               ) : (
