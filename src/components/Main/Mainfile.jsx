@@ -98,11 +98,7 @@ const Mainfile = () => {
 
                 {loading ? (
                   <>
-                    <div className="loader">
-                      <hr />
-                      <hr />
-                      <hr />
-                    </div>
+                    <div className="loader">Extracting data...</div>
                   </>
                 ) : (
                   <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
